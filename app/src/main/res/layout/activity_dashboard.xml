@@ -66,14 +66,14 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/belanja"
+                        android:src="@drawable/user"
                         android:layout_width="80dp"
                         android:layout_height="80dp" />
                     <TextView
                         android:layout_marginTop="12dp"
                         android:textColor="#6f6f6f"
                         android:textSize="18dp"
-                        android:text="Keranjang Beli"
+                        android:text="pembeli"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
@@ -96,14 +96,14 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/belanja"
+                        android:src="@drawable/bayar"
                         android:layout_width="80dp"
                         android:layout_height="80dp" />
                     <TextView
                         android:layout_marginTop="12dp"
                         android:textColor="#6f6f6f"
                         android:textSize="18dp"
-                        android:text="Keranjang Beli"
+                        android:text="transaksi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
@@ -126,14 +126,14 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/belanja"
+                        android:src="@drawable/calender"
                         android:layout_width="80dp"
                         android:layout_height="80dp" />
                     <TextView
                         android:layout_marginTop="12dp"
                         android:textColor="#6f6f6f"
                         android:textSize="18dp"
-                        android:text="Keranjang Beli"
+                        android:text="calender"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
@@ -156,14 +156,14 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/belanja"
+                        android:src="@drawable/list_barang"
                         android:layout_width="80dp"
                         android:layout_height="80dp" />
                     <TextView
                         android:layout_marginTop="12dp"
                         android:textColor="#6f6f6f"
                         android:textSize="18dp"
-                        android:text="Keranjang Beli"
+                        android:text="list product"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 

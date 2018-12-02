@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menuInsertDataPembeli"
+        android:title="Insert Data Pembeli"/>
+    <item
+        android:id="@+id/menuUpdateDataPembeli"
+        android:title="Update Data Pembeli"/>
+    <item
+        android:id="@+id/menuListDataPembeli"
+        android:title="List Data Pembeli"/>
+</menu>

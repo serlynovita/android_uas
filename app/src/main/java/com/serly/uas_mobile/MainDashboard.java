@@ -49,6 +49,31 @@ public class MainDashboard extends AppCompatActivity {
         this.startActivity(i);
     }
 
+    public void buttonPembeli_onClick(View view) {
+        Intent i = new Intent(this.getApplicationContext(),ActivityPembeli.class);
+        this.startActivity(i);
+    }
+
+    public void buttonBarang_onClick(View view) {
+        Intent i = new Intent(this.getApplicationContext(),ActivityPembeli.class);
+        this.startActivity(i);
+    }
+
+    public void buttonOngkosKirim_onClick(View view) {
+        Intent i = new Intent(this.getApplicationContext(),ActivityPembeli.class);
+        this.startActivity(i);
+    }
+
+    public void buttonTransaksi_onClick(View view) {
+        Intent i = new Intent(this.getApplicationContext(),ActivityPembeli.class);
+        this.startActivity(i);
+    }
+
+    public void buttonDetailTransaksi_onClick(View view) {
+        Intent i = new Intent(this.getApplicationContext(),ActivityPembeli.class);
+        this.startActivity(i);
+    }
+
 //    private void setSingleEvent(GridLayout mainGrid) {
 //        //Loop all child item of Main Grid
 //        for (int i = 0; i < mainGrid.getChildCount(); i++) {

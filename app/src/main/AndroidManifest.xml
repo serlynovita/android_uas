@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.serly.uas_mobile">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,7 +21,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainDashboard" />
-        <activity android:name=".ActivityPembeli"></activity>
+        <activity android:name=".ActivityPembeli" />
+        <activity android:name=".LayarDetailPembeli" />
+        <activity android:name=".LayarListPembeli" />
+        <activity android:name=".LayarInsertPembeli" />
+        <activity android:name=".LayarEditPembeli"></activity>
     </application>
 
 </manifest>

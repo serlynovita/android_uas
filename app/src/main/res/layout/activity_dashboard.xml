@@ -55,7 +55,7 @@
                 android:layout_marginRight="16dp"
                 app:cardElevation="8dp"
                 app:cardCornerRadius="8dp"
-                >
+                android:onClick="buttonPembeli_onClick">
 
                 <LinearLayout
                     android:layout_gravity="center_horizontal|center_vertical"
@@ -94,7 +94,7 @@
                 android:layout_marginRight="16dp"
                 app:cardElevation="8dp"
                 app:cardCornerRadius="8dp"
-                >
+                android:onClick="buttonBarang_onClick">
 
                 <LinearLayout
                     android:layout_gravity="center_horizontal|center_vertical"
@@ -136,7 +136,7 @@
                 android:layout_marginRight="16dp"
                 app:cardElevation="8dp"
                 app:cardCornerRadius="8dp"
-                >
+                android:onClick="buttonOngkosKirim_onClick">
 
                 <LinearLayout
                     android:layout_gravity="center_horizontal|center_vertical"
@@ -175,7 +175,7 @@
                 android:layout_marginRight="16dp"
                 app:cardElevation="8dp"
                 app:cardCornerRadius="8dp"
-                >
+                android:onClick="buttonTransaksi_onClick">
 
                 <LinearLayout
                     android:layout_gravity="center_horizontal|center_vertical"
@@ -217,7 +217,7 @@
                 android:layout_marginRight="16dp"
                 app:cardElevation="8dp"
                 app:cardCornerRadius="8dp"
-                >
+                android:onClick="buttonDetailTransaksi_onClick">
 
                 <LinearLayout
                     android:layout_gravity="center_horizontal|center_vertical"

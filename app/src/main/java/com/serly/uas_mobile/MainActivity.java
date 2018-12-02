@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void initComponents(){
         this.chkRemember = this.findViewById(R.id.chk_remember);
-        this.btnLogin = this.findViewById(R.id.btn_registrasi);
-        this.btnRegistrasi = this.findViewById(R.id.btn_login);
+        this.btnLogin = this.findViewById(R.id.btn_login);
+//        this.btnRegistrasi = this.findViewById(R.id.btn_registrasi);
         this.txtName = this.findViewById(R.id.name);
         this.txtEmail = this.findViewById(R.id.email);
         this.txtPassword = this.findViewById(R.id.password);

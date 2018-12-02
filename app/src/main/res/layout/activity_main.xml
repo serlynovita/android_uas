@@ -94,15 +94,15 @@
             android:textAllCaps="false"
             android:textColor="#FFF" />
 
-        <Button
-            android:id="@+id/btn_registrasi"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/rec_gradient_fb"
-            android:text="Registrasi"
-            android:textAllCaps="false"
-            android:textColor="#FFF" />
+        <!--<Button-->
+            <!--android:id="@+id/btn_registrasi"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:background="@drawable/rec_gradient_fb"-->
+            <!--android:text="Registrasi"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:textColor="#FFF" />-->
 
     </LinearLayout>
 
@@ -122,7 +122,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="19dp"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@drawable/laptop" />
 
     <TextView
         android:textSize="20dp"

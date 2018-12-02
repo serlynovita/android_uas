@@ -186,7 +186,37 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/help"
+                        android:src="@drawable/belanja"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+                    <TextView
+                        android:layout_marginTop="12dp"
+                        android:textColor="#6f6f6f"
+                        android:textSize="18dp"
+                        android:text="Logout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:src="@drawable/belanja"
                         android:layout_width="80dp"
                         android:layout_height="80dp" />
                     <TextView
@@ -229,96 +259,66 @@
 
                 </LinearLayout>
             </android.support.v7.widget.CardView>
-            <!--<android.support.v7.widget.CardView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_columnWeight="1"-->
-                <!--android:layout_rowWeight="1"-->
-                <!--app:cardElevation="6dp"-->
-                <!--app:cardCornerRadius="12dp"-->
-                <!--android:layout_margin="12dp">-->
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp">
 
-                <!--<LinearLayout-->
-                    <!--android:orientation="vertical"-->
-                    <!--android:padding="16dp"-->
-                    <!--android:gravity="center"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="match_parent">-->
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                    <!--<ImageView-->
-                        <!--android:src="@drawable/belanja"-->
-                        <!--android:layout_width="80dp"-->
-                        <!--android:layout_height="80dp" />-->
-                    <!--<TextView-->
-                        <!--android:layout_marginTop="12dp"-->
-                        <!--android:textColor="#6f6f6f"-->
-                        <!--android:textSize="18dp"-->
-                        <!--android:text="Keranjang Beli"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content" />-->
+                    <ImageView
+                        android:src="@drawable/belanja"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+                    <TextView
+                        android:layout_marginTop="12dp"
+                        android:textColor="#6f6f6f"
+                        android:textSize="18dp"
+                        android:text="Keranjang Beli"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
 
-                <!--</LinearLayout>-->
-            <!--</android.support.v7.widget.CardView>-->
-            <!--<android.support.v7.widget.CardView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_columnWeight="1"-->
-                <!--android:layout_rowWeight="1"-->
-                <!--app:cardElevation="6dp"-->
-                <!--app:cardCornerRadius="12dp"-->
-                <!--android:layout_margin="12dp">-->
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp">
 
-                <!--<LinearLayout-->
-                    <!--android:orientation="vertical"-->
-                    <!--android:padding="16dp"-->
-                    <!--android:gravity="center"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="match_parent">-->
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                    <!--<ImageView-->
-                        <!--android:src="@drawable/belanja"-->
-                        <!--android:layout_width="80dp"-->
-                        <!--android:layout_height="80dp" />-->
-                    <!--<TextView-->
-                        <!--android:layout_marginTop="12dp"-->
-                        <!--android:textColor="#6f6f6f"-->
-                        <!--android:textSize="18dp"-->
-                        <!--android:text="Keranjang Beli"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content" />-->
+                    <ImageView
+                        android:src="@drawable/belanja"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+                    <TextView
+                        android:layout_marginTop="12dp"
+                        android:textColor="#6f6f6f"
+                        android:textSize="18dp"
+                        android:text="Keranjang Beli"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
 
-                <!--</LinearLayout>-->
-            <!--</android.support.v7.widget.CardView>-->
-            <!--<android.support.v7.widget.CardView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_columnWeight="1"-->
-                <!--android:layout_rowWeight="1"-->
-                <!--app:cardElevation="6dp"-->
-                <!--app:cardCornerRadius="12dp"-->
-                <!--android:layout_margin="12dp">-->
-
-                <!--<LinearLayout-->
-                    <!--android:orientation="vertical"-->
-                    <!--android:padding="16dp"-->
-                    <!--android:gravity="center"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="match_parent">-->
-
-                    <!--<ImageView-->
-                        <!--android:src="@drawable/belanja"-->
-                        <!--android:layout_width="80dp"-->
-                        <!--android:layout_height="80dp" />-->
-                    <!--<TextView-->
-                        <!--android:layout_marginTop="12dp"-->
-                        <!--android:textColor="#6f6f6f"-->
-                        <!--android:textSize="18dp"-->
-                        <!--android:text="Keranjang Beli"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content" />-->
-
-                <!--</LinearLayout>-->
-            <!--</android.support.v7.widget.CardView>-->
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
         </GridLayout>
     </LinearLayout>
 </ScrollView>

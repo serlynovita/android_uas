@@ -36,7 +36,8 @@
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         android:hint="id pembeli"
-        android:layout_below="@+id/tvMessage2"/>
+        android:layout_below="@+id/tvMessage2"
+        android:inputType="number"/>
     <EditText
         android:id="@+id/edtNamaPembeli"
         android:layout_width="300dp"
@@ -53,7 +54,7 @@
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/edtNamaPembeli"
-        android:inputType="date"/>
+        android:inputType="textMultiLine"/>
     <EditText
         android:id="@+id/edtTelpn"
         android:layout_width="300dp"
@@ -70,7 +71,8 @@
         android:hint="Email"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/edtTelpn"/>
+        android:layout_below="@+id/edtTelpn"
+        android:inputType="textEmailAddress"/>
     <EditText
         android:id="@+id/edtPassword"
         android:layout_width="300dp"
@@ -79,11 +81,11 @@
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/edtEmail"
-        android:inputType="number"/>
+        android:inputType="textPassword"/>
 
     <LinearLayout
         android:id="@+id/Linearlayout2"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:layout_below="@+id/edtPassword"
@@ -91,11 +93,6 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp">
 
-        <Button
-            android:id="@+id/btInsert2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Insert"/>
         <Button
             android:id="@+id/btUpdate2"
             android:layout_width="wrap_content"

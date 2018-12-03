@@ -43,11 +43,9 @@ public class PembeliAdapter extends RecyclerView.Adapter<PembeliAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(MyViewHolder holder,final int position) {
-        holder.mTextViewNama.setText("Nama Pembeli : " + mPembeliList.get(position).getNamaPembeli());
+        holder.mTextViewNama.setText(mPembeliList.get(position).getNamaPembeli());
         holder.mTextViewAlamat.setText("Alamat : "+ mPembeliList.get(position).getAlamat());
         holder.mTextViewTelepon.setText("Telepon : " + mPembeliList.get(position).getTelpn());
-//        holder.mTextViewEmail.setText("Email : " + mPembeliList.get(position).getEmail());
-//        holder.mTextViewPassword.setText("Password : " + mPembeliList.get(position).getPassword());
 
         holder.itemView.setOnClickListener(new View.OnClickListener(){
 
@@ -56,10 +54,10 @@ public class PembeliAdapter extends RecyclerView.Adapter<PembeliAdapter.MyViewHo
                 Intent mIntent = new Intent(view.getContext(), LayarDetailPembeli.class);
                 mIntent.putExtra("id_pembeli",mPembeliList.get(position).getIdPembeli());
                 mIntent.putExtra("nama_pembeli" , mPembeliList.get(position).getNamaPembeli());
-                mIntent.putExtra("alamat : " , mPembeliList.get(position).getAlamat());
-                mIntent.putExtra("telpn : ", mPembeliList.get(position).getTelpn());
-                mIntent.putExtra("email : " , String.valueOf(mPembeliList.get(position).getEmail()));
-                mIntent.putExtra("password : " , String.valueOf(mPembeliList.get(position).getPassword()));
+                mIntent.putExtra("alamat" , mPembeliList.get(position).getAlamat());
+                mIntent.putExtra("telpn", mPembeliList.get(position).getTelpn());
+                mIntent.putExtra("email" , String.valueOf(mPembeliList.get(position).getEmail()));
+                mIntent.putExtra("password" , String.valueOf(mPembeliList.get(position).getPassword()));
                 view.getContext().startActivity(mIntent);
             }
         });
@@ -71,7 +69,7 @@ public class PembeliAdapter extends RecyclerView.Adapter<PembeliAdapter.MyViewHo
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView mTextViewNama,
+        public TextView mTextViewIdPembeli ,mTextViewNama,
                 mTextViewAlamat, mTextViewTelepon,mTextViewEmail,mTextViewPassword;
         public MyViewHolder(View itemView){
             super(itemView);

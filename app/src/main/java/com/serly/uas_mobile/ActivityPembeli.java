@@ -165,5 +165,11 @@ public class ActivityPembeli extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    public void buttonInsertPembeli_onClick(View view) {
+        Intent i = new Intent(this.getApplicationContext(),LayarInsertPembeli.class);
+        this.startActivity(i);
+    }
+
 }
 

@@ -81,7 +81,7 @@ public class LayarInsertPembeli extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<GetPembeli> call, Response<GetPembeli> response) {
                         if(response.body().getStatus().equals("failed")){
-                            tvAddMessage.setText("Retrofit Insert \n Status = "+ response.body().getStatus() + "\n" + "Message = " + response.body().getMessage() + "\n");
+                            tvAddMessage.setText("Retrofit Insert = "+ response.body().getStatus() + "\n" );
                         }
                         else{
                             String detail = "\n" + "id_pembeli = " + response.body().getListDataPembeli().get(0).getIdPembeli() + "\n" +

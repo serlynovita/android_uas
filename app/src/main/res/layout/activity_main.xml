@@ -81,7 +81,8 @@
             android:layout_height="wrap_content"
             android:drawablePadding="20dp"
             android:drawableRight="@drawable/ic_lock"
-            android:hint="*******" />
+            android:hint="*******"
+            android:inputType="textPassword"/>
 
         <Button
             android:id="@+id/btn_login"

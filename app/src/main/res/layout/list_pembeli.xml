@@ -6,7 +6,9 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        android:layout_margin="10dp"
+        >
+
         <TextView
             android:id="@+id/tvNama"
             android:layout_width="wrap_content"
@@ -31,32 +33,31 @@
             android:id="@+id/tvAlamat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:paddingTop="50dp"
             android:layout_toRightOf="@+id/imgPembeli"
             android:hint="Alamat :"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:paddingBottom="10dp"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvTelp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvAlamat"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp"
             android:layout_toRightOf="@+id/imgPembeli"
             android:hint="Telp :"
             android:textSize="20sp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/tvTelpContent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tvTelp"
-            android:layout_marginTop="5dp"
-            android:layout_toRightOf="@+id/imgPembeli"
-            android:hint="Contoh 0861577909"
-            android:textSize="20sp"/>
+            android:textStyle="bold"
+            android:padding="15dp"
+            android:layout_marginBottom="10dp"/>
     </RelativeLayout>
     <View
         android:layout_width="match_parent"

@@ -9,8 +9,7 @@ Aplikasi ini dibuat untuk admin dan user, dimana admin sebagai penjual dan user 
 agar user dapat dengan mudah menjalankan aplikasi dan fitur didalamnya.
 
 ## Screenshots
-![Layar Home](http://echarlie.co/wp-content/uploads/salon-booking-app-hareesh-dribbble-salon-design-app.jpg)
-
+https://github.com/serlynovita/android_uas/issues/1#issue-386644726
 ## Android OS dan Level
 Sdk version yang digunakan adalah 23
 

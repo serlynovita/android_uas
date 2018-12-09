@@ -31,7 +31,7 @@ import retrofit2.Response;
 public class LayarInsertPembeli extends AppCompatActivity {
 
     Context mContext;
-    Button btInsert, btUpdate, btDelete, btBack;
+    Button btInsert, btBack;
     EditText edtIdPembeli, edtNamaPembeli,edtAlamat, edtTelpn, edtEmail, edtPassword;
     TextView tvAddMessage;
 
@@ -42,17 +42,15 @@ public class LayarInsertPembeli extends AppCompatActivity {
 
         mContext = getApplicationContext();
 
-        edtIdPembeli =(EditText) findViewById(R.id.edtAddIdPembeli);
-        edtNamaPembeli =(EditText) findViewById(R.id.edtAddNamaPembeli);
-        edtAlamat =(EditText) findViewById(R.id.edtAddAlamatPembeli);
-        edtTelpn =(EditText) findViewById(R.id.edtAddTelpnPembeli);
-        edtEmail =(EditText) findViewById(R.id.edtAddEmail);
-        edtPassword =(EditText) findViewById(R.id.edtAddPassword);
-        tvAddMessage =(TextView) findViewById(R.id.tvAddMessage);
+        edtIdPembeli =(EditText) findViewById(R.id.edtIdPembeli);
+        edtNamaPembeli =(EditText) findViewById(R.id.edtNamaPembeli);
+        edtAlamat =(EditText) findViewById(R.id.edtAlamat);
+        edtTelpn =(EditText) findViewById(R.id.edtTelpn);
+        edtEmail =(EditText) findViewById(R.id.edtEmail);
+        edtPassword =(EditText) findViewById(R.id.edtPassword);
+        tvAddMessage =(TextView) findViewById(R.id.tvMessage2);
 
         btInsert = (Button) findViewById(R.id.btInsert2);
-        btUpdate = (Button) findViewById(R.id.btUpdate2);
-        btDelete = (Button) findViewById(R.id.btDelete2);
         btBack = (Button) findViewById(R.id.btBack);
 
         final ApiInterfacePembeli mApiInterface = ApiClient.getClient().create(ApiInterfacePembeli.class);
@@ -63,7 +61,7 @@ public class LayarInsertPembeli extends AppCompatActivity {
                 ApiInterfacePembeli mApiInterface = ApiClient.getClient().create(ApiInterfacePembeli.class);
 
                 RequestBody reqIdPembeli = MultipartBody.create(MediaType.parse("multipart/form-data"),
-                        (edtIdPembeli.getText().toString().isEmpty())?"":edtIdPembeli.getText().toString());
+                        "");
                 RequestBody reqNama = MultipartBody.create(MediaType.parse("multipart/form-data"),
                         (edtNamaPembeli.getText().toString().isEmpty())?"":edtNamaPembeli.getText().toString());
                 RequestBody reqAlamat = MultipartBody.create(MediaType.parse("multipart/form-data"),
@@ -80,19 +78,9 @@ public class LayarInsertPembeli extends AppCompatActivity {
                 mPembeliCall.enqueue(new Callback<GetPembeli>() {
                     @Override
                     public void onResponse(Call<GetPembeli> call, Response<GetPembeli> response) {
-                        if(response.body().getStatus().equals("failed")){
-                            tvAddMessage.setText("Retrofit Insert = "+ response.body().getStatus() + "\n" );
-                        }
-                        else{
-                            String detail = "\n" + "id_pembeli = " + response.body().getListDataPembeli().get(0).getIdPembeli() + "\n" +
-                                    "nama_pembeli = " + response.body().getListDataPembeli().get(0).getNamaPembeli() + "\n" +
-                                    "alamat = " + response.body().getListDataPembeli().get(0).getAlamat() + "\n" +
-                                    "telp = " + response.body().getListDataPembeli().get(0).getTelpn() + "\n" +
-                                    "email = " + response.body().getListDataPembeli().get(0).getEmail() + "\n" +
-                                    "password = " + response.body().getListDataPembeli().get(0).getPassword() + "\n" ;
-                            tvAddMessage.setText("Retrofit Insert \n Status = " + response.body().getStatus() + "\n" +
-                                    "Message = " + response.body().getMessage() + detail);
-                        }
+
+                        tvAddMessage.setText("Retrofit Insert = "+ response.body().getStatus() + "\n" );
+
                     }
 
                     @Override
@@ -106,30 +94,8 @@ public class LayarInsertPembeli extends AppCompatActivity {
         btBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(mContext,LayarListPembeli.class);
+                Intent intent = new Intent(mContext,ActivityPembeli.class);
                 startActivity(intent);
-            }
-        });
-
-        btDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                RequestBody reqIdPembeli = MultipartBody.create(MediaType.parse("multipart/form-data"),
-                        (edtIdPembeli.getText().toString().isEmpty())? "" : edtIdPembeli.getText().toString());
-                RequestBody reqAction = MultipartBody.create(MediaType.parse("multipart/form-data"),"delete");
-                Call<GetPembeli> callDelete = mApiInterface.deletePembeli(reqIdPembeli,reqAction);
-                callDelete.enqueue(new Callback<GetPembeli>() {
-                    @Override
-                    public void onResponse(Call<GetPembeli> call, Response<GetPembeli> response) {
-                        tvAddMessage.setText("Retrofit Delete \n Status = " + response.body().getStatus() + "\n" +
-                                "Message = " + response.body().getMessage() + "\n");
-                    }
-
-                    @Override
-                    public void onFailure(Call<GetPembeli> call, Throwable t) {
-                        tvAddMessage.setText("Retrofit Delete \n Status = " + t.getMessage());
-                    }
-                });
             }
         });
     }

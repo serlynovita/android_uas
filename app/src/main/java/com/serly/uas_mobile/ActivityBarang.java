@@ -1,9 +1,6 @@
 package com.serly.uas_mobile;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,10 +12,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.serly.uas_mobile.Adapter.BarangAdapter;
 import com.serly.uas_mobile.Adapter.PembeliAdapter;
+import com.serly.uas_mobile.Model.Barang;
+import com.serly.uas_mobile.Model.GetBarang;
 import com.serly.uas_mobile.Model.GetPembeli;
 import com.serly.uas_mobile.Model.Pembeli;
 import com.serly.uas_mobile.Rest.ApiClient;
+import com.serly.uas_mobile.Rest.ApiInterfaceBarang;
 import com.serly.uas_mobile.Rest.ApiInterfacePembeli;
 
 import java.util.List;
@@ -26,10 +27,10 @@ import java.util.List;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ActivityPembeli extends AppCompatActivity {
+public class ActivityBarang extends AppCompatActivity {
 
     Button btGet;
-    ApiInterfacePembeli mApiInterfacePembeli;
+    ApiInterfaceBarang mApiInterfaceBarang;
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -38,7 +39,7 @@ public class ActivityPembeli extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pembeli);
+        setContentView(R.layout.activity_barang);
 
         TextView txtInfo = (TextView)findViewById(R.id.txtInfo);
         if(getIntent() != null)
@@ -54,7 +55,7 @@ public class ActivityPembeli extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mApiInterfacePembeli = ApiClient.getClient().create(ApiInterfacePembeli.class);
+        mApiInterfaceBarang = ApiClient.getClient().create(ApiInterfaceBarang.class);
 
         tampil();
 
@@ -124,18 +125,18 @@ public class ActivityPembeli extends AppCompatActivity {
 
 
     public void tampil(){
-        retrofit2.Call<GetPembeli> pembelianCall = mApiInterfacePembeli.getPembeli();
-        pembelianCall.enqueue(new Callback<GetPembeli>(){
+        retrofit2.Call<GetBarang> barangCall = mApiInterfaceBarang.getBarang();
+        barangCall.enqueue(new Callback<GetBarang>(){
             @Override
-            public void onResponse(retrofit2.Call<GetPembeli> call, Response<GetPembeli> response) {
-                List<Pembeli> pembelianList = response.body().getListDataPembeli();
-                Log.d("Retrofit Get","Jumlah data pembelian:" + String.valueOf(pembelianList.size()));
-                mAdapter = new PembeliAdapter(pembelianList);
+            public void onResponse(retrofit2.Call<GetBarang> call, Response<GetBarang> response) {
+                List<Barang> barangList = response.body().getResult();
+                Log.d("Retrofit Get","Jumlah data barang:" + String.valueOf(barangList.size()));
+                mAdapter = new BarangAdapter(barangList);
                 mRecyclerView.setAdapter(mAdapter);
             }
 
             @Override
-            public void onFailure(retrofit2.Call<GetPembeli> call, Throwable t) {
+            public void onFailure(retrofit2.Call<GetBarang> call, Throwable t) {
                 Log.e("Retrofit Get",t.toString());
             }
         });
@@ -168,17 +169,17 @@ public class ActivityPembeli extends AppCompatActivity {
         }
     }
 
-    public void buttonInsertPembeli_onClick(View view) {
-        Intent i = new Intent(this.getApplicationContext(),LayarInsertPembeli.class);
+    public void buttonInsertBarang_onClick(View view) {
+        Intent i = new Intent(this.getApplicationContext(),LayarInsertBarang.class);
         this.startActivity(i);
     }
 
-    public void buttonBackPembeli_onClick(View view) {
+    public void buttonBackBarang_onClick(View view) {
         Intent i = new Intent(this.getApplicationContext(),MainDashboard.class);
         this.startActivity(i);
     }
 
-    public void buttonRefreshPembeli_onClick(View view) {
+    public void buttonRefreshBarang_onClick(View view) {
         this.startActivity(getIntent());
         finish();
     }

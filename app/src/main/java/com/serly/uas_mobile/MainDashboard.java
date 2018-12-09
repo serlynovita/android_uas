@@ -55,12 +55,12 @@ public class MainDashboard extends AppCompatActivity {
     }
 
     public void buttonBarang_onClick(View view) {
-        Intent i = new Intent(this.getApplicationContext(),ActivityPembeli.class);
+        Intent i = new Intent(this.getApplicationContext(),ActivityBarang.class);
         this.startActivity(i);
     }
 
     public void buttonOngkosKirim_onClick(View view) {
-        Intent i = new Intent(this.getApplicationContext(),ActivityPembeli.class);
+        Intent i = new Intent(this.getApplicationContext(),ActivityOngkosKirim.class);
         this.startActivity(i);
     }
 

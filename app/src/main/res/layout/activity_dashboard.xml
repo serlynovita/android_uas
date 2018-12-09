@@ -5,11 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainDashboard">
-
     <LinearLayout
         android:orientation="vertical"
-        android:background="@drawable/bg"
         android:weightSum="10"
+        android:background="@drawable/bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

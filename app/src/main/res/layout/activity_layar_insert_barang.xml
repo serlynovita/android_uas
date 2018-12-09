@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LayarInsertBarang"
+    android:background="@drawable/bg"
+    android:id="@+id/layarInsertbarang">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:id="@+id/crud"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Insert Barang"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvMessage2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/crud"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:inputType="textMultiLine"
+            android:text="Pesan Muncul disini"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imgFoto"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="113dp"
+            android:src="@drawable/image" />
+
+        <Button
+            android:id="@+id/btFoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/imgFoto"
+            android:layout_below="@+id/imgFoto"
+            android:text="Pilih Foto" />
+
+        <Button
+            android:id="@+id/btCamera"
+            android:layout_width="97dp"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/imgFoto"
+            android:layout_below="@+id/imgFoto"
+            android:text="Foto" />
+
+        <ScrollView
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/btFoto"
+            android:layout_marginBottom="30dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="35dp">
+
+                <EditText
+                    android:id="@+id/edtIdBarang"
+                    android:layout_width="300dp"
+                    android:layout_height="19dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="20dp"
+                    android:enabled="false"
+                    android:hint="id barang"
+                    android:inputType="number"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/txtNamaBarang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/edtIdBarang"
+                    android:layout_marginTop="20dp"
+                    android:text="Nama Barang"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edtNamaBarang"
+                    android:layout_width="174dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/txtNamaBarang"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@+id/txtNamaBarang"
+                    android:hint="Nama Barang" />
+
+                <TextView
+                    android:id="@+id/txtWarnaBarang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/txtNamaBarang"
+                    android:layout_marginTop="20dp"
+                    android:text="Warna Barang"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edtWarnaBarang"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/edtNamaBarang"
+                    android:layout_below="@+id/edtNamaBarang"
+                    android:hint="Warna Barang"
+                    android:inputType="textMultiLine" />
+
+                <TextView
+                    android:id="@+id/txtKategoriBarang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/txtWarnaBarang"
+                    android:layout_marginTop="20dp"
+                    android:text="Kategori Barang"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edtKategoriBarang"
+                    android:layout_width="171dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/edtWarnaBarang"
+                    android:layout_below="@+id/edtWarnaBarang"
+                    android:hint="Kategori Barang" />
+
+                <TextView
+                    android:id="@+id/txtBeratBarang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/txtKategoriBarang"
+                    android:layout_marginTop="20dp"
+                    android:text="Berat Barang"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edtBeratBarang"
+                    android:layout_width="171dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/edtKategoriBarang"
+                    android:layout_below="@+id/edtKategoriBarang"
+                    android:hint="Email"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:id="@+id/txtDeskripsi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/txtBeratBarang"
+                    android:layout_marginTop="20dp"
+                    android:text="Deskripsi"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edtDeskripsi"
+                    android:layout_width="171dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/edtBeratBarang"
+                    android:layout_below="@+id/edtBeratBarang"
+                    android:hint="Email"
+                    android:inputType="textMultiLine" />
+
+                <TextView
+                    android:id="@+id/txtHarga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/txtDeskripsi"
+                    android:layout_marginTop="20dp"
+                    android:text="Harga"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edtHarga"
+                    android:layout_width="171dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/edtDeskripsi"
+                    android:layout_below="@+id/edtDeskripsi"
+                    android:hint="Harga"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/txtStok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/txtHarga"
+                    android:layout_marginTop="20dp"
+                    android:text="Stok"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edtStok"
+                    android:layout_width="171dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/edtHarga"
+                    android:layout_below="@+id/edtHarga"
+                    android:hint="Stok"
+                    android:inputType="number" />
+
+                <LinearLayout
+                    android:id="@+id/Linearlayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/txtStok"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btInsert2"
+                        android:layout_width="159dp"
+                        android:layout_height="wrap_content"
+                        android:text="Insert" />
+
+                    <Button
+                        android:id="@+id/btBack"
+                        android:layout_width="159dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="30dp"
+                        android:text="Back" />
+                </LinearLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>

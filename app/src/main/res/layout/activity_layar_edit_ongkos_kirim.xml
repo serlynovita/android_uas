@@ -2,11 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/LayarEditPembeli"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LayarEditPembeli"
-    android:background="@drawable/bg">
+    tools:context=".LayarEditOngkosKirim"
+    android:background="@drawable/bg"
+    android:id="@+id/LayarEditOngkosKirim">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,7 +17,7 @@
             android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Update Pembeli"
+            android:text="Update Ongkos Kirim"
             android:textColor="@color/white"
             android:textSize="30sp"
             android:textStyle="bold"
@@ -35,66 +36,39 @@
             android:layout_below="@+id/crud"/>
 
         <EditText
-            android:id="@+id/edtIdPembeli"
+            android:id="@+id/edtIdOngkir"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_centerHorizontal="true"
-            android:hint="id pembeli"
+            android:hint="id ongkir"
             android:layout_below="@+id/tvMessage2"
             android:inputType="number"
             android:visibility="invisible"/>
         <EditText
-            android:id="@+id/edtNamaPembeli"
+            android:id="@+id/edtKota"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:hint="nama pembeli"
+            android:hint="KOta"
             android:layout_marginTop="20dp"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/edtIdPembeli"/>
+            android:layout_below="@+id/edtIdOngkir"/>
         <EditText
-            android:id="@+id/edtAlamat"
+            android:id="@+id/edtHarga"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:hint="Alamat"
+            android:hint="Harga"
             android:layout_marginTop="20dp"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/edtNamaPembeli"
-            android:inputType="textMultiLine"/>
-        <EditText
-            android:id="@+id/edtTelpn"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:hint="Telepon"
-            android:layout_marginTop="20dp"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/edtAlamat"
+            android:layout_below="@+id/edtKota"
             android:inputType="number"/>
-        <EditText
-            android:id="@+id/edtEmail"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:hint="Email"
-            android:layout_marginTop="20dp"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/edtTelpn"
-            android:inputType="textEmailAddress"/>
-        <EditText
-            android:id="@+id/edtPassword"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            android:layout_marginTop="20dp"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/edtEmail"
-            android:inputType="textPassword"/>
 
         <LinearLayout
             android:id="@+id/Linearlayout2"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:layout_below="@+id/edtPassword"
+            android:layout_below="@+id/edtHarga"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp">

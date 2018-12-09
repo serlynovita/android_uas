@@ -2,11 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_get_pembelian"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityPembeli"
-    android:background="@drawable/bg">
+    tools:context=".ActivityOngkosKirim"
+    android:background="@drawable/bg"
+    android:id="@+id/activity_get_ongkoskirim">
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -16,12 +17,12 @@
         android:padding="15dp">
 
         <TextView
-            android:id="@+id/txtTitlePembeli"
+            android:id="@+id/txtTitleOngkosKirim"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
-            android:text="Daftar Pembeli"
+            android:text="Daftar Ongkos Kirim"
             android:textColor="@color/white"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -31,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="319dp"
             android:layout_above="@+id/btAddData"
-            android:layout_below="@+id/txtTitlePembeli"
+            android:layout_below="@+id/txtTitleOngkosKirim"
             android:layout_marginTop="73dp"></android.support.v7.widget.RecyclerView>
 
         <Button
@@ -39,7 +40,7 @@
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:onClick="buttonInsertPembeli_onClick"
+            android:onClick="buttonInsertOngkosKirim_onClick"
             android:text="Tambah Data" />
 
         <Button
@@ -49,7 +50,7 @@
             android:layout_below="@+id/recyclerView"
             android:layout_marginLeft="10dp"
             android:layout_toEndOf="@+id/btAddData"
-            android:onClick="buttonRefreshPembeli_onClick"
+            android:onClick="buttonRefreshOngkosKirim_onClick"
             android:text="Refresh" />
 
         <Button
@@ -59,7 +60,7 @@
             android:layout_below="@+id/recyclerView"
             android:layout_marginLeft="10dp"
             android:layout_toEndOf="@+id/btRefresh"
-            android:onClick="buttonBackPembeli_onClick"
+            android:onClick="buttonBackOngkosKirim_onClick"
             android:text="Back" />
 
 

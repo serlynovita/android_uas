@@ -5,109 +5,167 @@
     android:id="@+id/layardetail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="15dp"
-    tools:context=".LayarDetailPembeli">
-
-    <TextView
-        android:id="@+id/crud"
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Detail Pembeli"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"/>
-
-    <TextView
-        android:id="@+id/tvMessage2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pesan Muncul disini"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:textSize="20sp"
-        android:inputType="textMultiLine"
-        android:layout_below="@+id/crud"/>
-
-    <EditText
-        android:id="@+id/edtIdPembeli"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"
-        android:hint="id pembeli"
-        android:layout_below="@+id/tvMessage2"
-        android:inputType="number"/>
-    <EditText
-        android:id="@+id/edtNamaPembeli"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:hint="nama pembeli"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/edtIdPembeli"/>
-    <EditText
-        android:id="@+id/edtAlamat"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:hint="Alamat"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/edtNamaPembeli"
-        android:inputType="textMultiLine"/>
-    <EditText
-        android:id="@+id/edtTelpn"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:hint="Telepon"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/edtAlamat"
-        android:inputType="number"/>
-    <EditText
-        android:id="@+id/edtEmail"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:hint="Email"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/edtTelpn"
-        android:inputType="textEmailAddress"/>
-    <EditText
-        android:id="@+id/edtPassword"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/edtEmail"
-        android:inputType="textPassword"/>
-
-    <LinearLayout
-        android:id="@+id/Linearlayout2"
-        android:layout_width="wrap_content"
+    tools:context=".LayarDetailPembeli"
+    android:background="@drawable/bg">
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_below="@+id/edtPassword"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp">
+        android:layout_margin="15dp">
+            <TextView
+                android:id="@+id/crud"
+                android:layout_marginTop="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Detail Pembeli"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"/>
 
-        <Button
-            android:id="@+id/btUpdate2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Update"/>
-        <Button
-            android:id="@+id/btDelete2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Delete"/>
-        <Button
-            android:id="@+id/btBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Back"/>
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tvMessage2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pesan Muncul disini"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:textSize="20sp"
+                android:inputType="textMultiLine"
+                android:layout_below="@+id/crud"/>
 
+            <EditText
+                android:id="@+id/edtIdPembeli"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentLeft="true"
+                android:hint="id pembeli"
+                android:layout_below="@+id/tvMessage2"
+                android:inputType="number"
+                android:visibility="invisible"
+                android:enabled="false"/>
+
+            <TextView
+                android:id="@+id/txtNamaPembeli"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama Pembeli"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:layout_alignParentLeft="true"
+                android:textSize="20sp"
+                android:layout_below="@+id/edtIdPembeli"/>
+
+            <EditText
+                android:id="@+id/edtNamaPembeli"
+                android:layout_width="174dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/txtNamaPembeli"
+                android:layout_toRightOf="@+id/txtNamaPembeli"
+                android:layout_marginLeft="20dp"
+                android:enabled="false"
+                android:hint="nama pembeli" />
+
+            <TextView
+                android:id="@+id/txtAlamat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alamat"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:layout_alignParentLeft="true"
+                android:textSize="20sp"
+                android:layout_below="@+id/txtNamaPembeli"/>
+
+            <EditText
+                android:id="@+id/edtAlamat"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/edtNamaPembeli"
+                android:layout_below="@+id/edtNamaPembeli"
+                android:enabled="false"
+                android:hint="Alamat"
+                android:inputType="textMultiLine" />
+
+            <TextView
+                android:id="@+id/txtTelpn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Telepon"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:layout_alignParentLeft="true"
+                android:textSize="20sp"
+                android:layout_below="@+id/txtAlamat"/>
+
+            <EditText
+                android:id="@+id/edtTelpn"
+                android:layout_width="171dp"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/edtAlamat"
+                android:layout_below="@+id/edtAlamat"
+                android:enabled="false"
+                android:hint="Telepon"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/txtEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:layout_alignParentLeft="true"
+                android:textSize="20sp"
+                android:layout_below="@+id/txtTelpn"/>
+
+            <EditText
+                android:id="@+id/edtEmail"
+                android:layout_width="171dp"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/edtTelpn"
+                android:layout_below="@+id/edtTelpn"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:enabled="false"/>
+
+            <TextView
+                android:id="@+id/txtPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:layout_alignParentLeft="true"
+                android:textSize="20sp"
+                android:layout_below="@+id/txtEmail"/>
+
+            <EditText
+                android:id="@+id/edtPassword"
+                android:layout_width="171dp"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/edtEmail"
+                android:layout_below="@+id/edtEmail"
+                android:hint="Password"
+                android:enabled="false"/>
+
+            <LinearLayout
+                android:id="@+id/Linearlayout2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="40dp"
+                android:layout_below="@+id/txtPassword"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/btBack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Back" />
+            </LinearLayout>
+    </RelativeLayout>
 </RelativeLayout>

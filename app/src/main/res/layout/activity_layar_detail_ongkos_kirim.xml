@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LayarDetailOngkosKirim"
+    android:background="@drawable/bg"
+    android:id="@+id/layardetailongkoskirim">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp">
+        <TextView
+            android:id="@+id/crud"
+            android:layout_marginTop="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Detail Ongkos Kirim"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/tvMessage2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pesan Muncul disini"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:inputType="textMultiLine"
+            android:layout_below="@+id/crud"/>
+
+        <EditText
+            android:id="@+id/edtIdOngkir"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentLeft="true"
+            android:hint="id pembeli"
+            android:layout_below="@+id/tvMessage2"
+            android:inputType="number"
+            android:visibility="invisible"
+            android:enabled="false"/>
+
+        <TextView
+            android:id="@+id/txtKota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kota"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:layout_alignParentLeft="true"
+            android:textSize="20sp"
+            android:layout_below="@+id/edtIdOngkir"/>
+
+        <EditText
+            android:id="@+id/edtKota"
+            android:layout_width="174dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtKota"
+            android:layout_toRightOf="@+id/txtKota"
+            android:layout_marginLeft="20dp"
+            android:enabled="false"
+            android:hint="kota" />
+
+        <TextView
+            android:id="@+id/txtHarga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Harga"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:layout_alignParentLeft="true"
+            android:textSize="20sp"
+            android:layout_below="@+id/txtKota"/>
+
+        <EditText
+            android:id="@+id/edtHarga"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/edtKota"
+            android:layout_below="@+id/edtKota"
+            android:enabled="false"
+            android:hint="harga"
+            android:inputType="textMultiLine" />
+
+        <LinearLayout
+            android:id="@+id/Linearlayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/txtHarga"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/btBack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Back" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

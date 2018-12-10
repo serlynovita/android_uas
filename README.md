@@ -26,6 +26,15 @@ Sdk version yang digunakan adalah 23
 	= Kelas ini berfungsi untuk login admin
 + MainDashBoard.java
 	= Kelas ini berisi menu utama dari admin
+	
+##list class user
++ activityBarang.java
++ layar_detail_barang.java
++ activity_lihat_transaksi.java
++ activity_main.java
++ activity_transaksi.java
++ barangAdapter.java
++ transaksiAdapter.java
 
 ## Referensi
 * [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - Web framework

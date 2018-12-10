@@ -48,19 +48,12 @@
             android:src="@drawable/image" />
 
         <Button
-            android:id="@+id/btFoto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/imgFoto"
-            android:layout_below="@+id/imgFoto"
-            android:text="Pilih Foto" />
-
-        <Button
             android:id="@+id/btCamera"
-            android:layout_width="97dp"
+            android:layout_width="292dp"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/imgFoto"
+            android:layout_margin="10dp"
             android:layout_below="@+id/imgFoto"
+            android:layout_centerHorizontal="true"
             android:text="Foto" />
 
         <ScrollView
@@ -68,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_below="@id/btFoto"
+            android:layout_below="@id/btCamera"
             android:layout_marginBottom="30dp">
 
             <RelativeLayout

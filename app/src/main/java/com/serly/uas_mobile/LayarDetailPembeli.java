@@ -42,8 +42,6 @@ public class LayarDetailPembeli extends AppCompatActivity {
         edtPassword =(EditText) findViewById(R.id.edtPassword);
         tvMessage = (TextView) findViewById(R.id.tvMessage2);
 
-        btInsert = (Button) findViewById(R.id.btInsert2);
-        btUpdate = (Button) findViewById(R.id.btUpdate2);
         btBack = (Button) findViewById(R.id.btBack);
 
         Intent mIntent = getIntent();

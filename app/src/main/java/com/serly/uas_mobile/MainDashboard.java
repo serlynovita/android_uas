@@ -65,7 +65,7 @@ public class MainDashboard extends AppCompatActivity {
     }
 
     public void buttonTransaksi_onClick(View view) {
-        Intent i = new Intent(this.getApplicationContext(),ActivityPembeli.class);
+        Intent i = new Intent(this.getApplicationContext(),ActivityTransaksi.class);
         this.startActivity(i);
     }
 

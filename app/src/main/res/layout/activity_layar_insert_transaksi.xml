@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LayarInsertTransaksi"
+    android:background="@drawable/bg"
+    android:id="@+id/LayarInsertTransaksi">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp">
+        <TextView
+            android:id="@+id/crud"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Insert Transaksi"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/tvMessage2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pesan Muncul disini"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:inputType="textMultiLine"
+            android:layout_below="@+id/crud"/>
+
+        <EditText
+            android:id="@+id/edtIdTransaksi"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:hint="id transaksi"
+            android:layout_below="@+id/tvMessage2"
+            android:inputType="number"
+            android:visibility="invisible"/>
+        <EditText
+            android:id="@+id/edtIdPembeli"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="id pembeli"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/edtIdTransaksi"
+            android:inputType="number"/>
+        <EditText
+            android:id="@+id/edtIdOngkir"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="id ongkir"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/edtIdPembeli"
+            android:inputType="number"/>
+        <EditText
+            android:id="@+id/edtTotalHarga"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Total harga"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/edtIdOngkir"
+            android:inputType="number"/>
+        <EditText
+            android:id="@+id/edtTglBeli"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Tanggal Beli"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/edtTotalHarga"/>
+        <Spinner
+            android:id="@+id/spinnerStatus"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Status"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/edtTglBeli"
+            android:entries="@array/status"/>
+
+        <LinearLayout
+            android:id="@+id/Linearlayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_below="@+id/spinnerStatus"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+
+            <Button
+                android:id="@+id/btInsert2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Insert"/>
+            <Button
+                android:id="@+id/btBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back"/>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

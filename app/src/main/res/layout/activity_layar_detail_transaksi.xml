@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LayarDetailTransaksi"
+    android:background="@drawable/bg"
+    android:id="@+id/layardetailTransaksi">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp">
+        <TextView
+            android:id="@+id/crud"
+            android:layout_marginTop="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Detail Transaksi"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/tvMessage2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pesan Muncul disini"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:inputType="textMultiLine"
+            android:layout_below="@+id/crud"/>
+
+        <EditText
+            android:id="@+id/edtIdTransaksi"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentLeft="true"
+            android:hint="id transaksi"
+            android:layout_below="@+id/tvMessage2"
+            android:inputType="number"
+            android:visibility="invisible"
+            android:enabled="false"/>
+
+        <TextView
+            android:id="@+id/txtIdPembeli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Id Pembeli"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:layout_alignParentLeft="true"
+            android:textSize="20sp"
+            android:layout_below="@+id/edtIdTransaksi"/>
+
+        <EditText
+            android:id="@+id/edtIdPembeli"
+            android:layout_width="174dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtIdPembeli"
+            android:layout_toRightOf="@+id/txtIdPembeli"
+            android:layout_marginLeft="20dp"
+            android:enabled="false"
+            android:hint="Id pembeli"
+            android:inputType="number"/>
+
+        <TextView
+            android:id="@+id/txtIdOngkir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Id Ongkir"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:layout_alignParentLeft="true"
+            android:textSize="20sp"
+            android:layout_below="@+id/txtIdPembeli"/>
+
+        <EditText
+            android:id="@+id/edtIdOngkir"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/edtIdPembeli"
+            android:layout_below="@+id/edtIdPembeli"
+            android:enabled="false"
+            android:hint="Id ongkir"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/txtTotalHarga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Harga"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:layout_alignParentLeft="true"
+            android:textSize="20sp"
+            android:layout_below="@+id/txtIdOngkir"/>
+
+        <EditText
+            android:id="@+id/edtTotalHarga"
+            android:layout_width="171dp"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/edtIdOngkir"
+            android:layout_below="@+id/edtIdOngkir"
+            android:enabled="false"
+            android:hint="Total Harga"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/txtTglBeli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tanggal Beli"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:layout_alignParentLeft="true"
+            android:textSize="20sp"
+            android:layout_below="@+id/txtTotalHarga"/>
+
+        <EditText
+            android:id="@+id/edtTglBeli"
+            android:layout_width="171dp"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/edtTotalHarga"
+            android:layout_below="@+id/edtTotalHarga"
+            android:hint="Total Harga"
+            android:enabled="false"/>
+
+        <TextView
+            android:id="@+id/txtStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:layout_alignParentLeft="true"
+            android:textSize="20sp"
+            android:layout_below="@+id/txtTglBeli"/>
+
+        <EditText
+            android:id="@+id/edtStatus"
+            android:layout_width="171dp"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/edtTglBeli"
+            android:layout_below="@+id/edtTglBeli"
+            android:hint="Status"
+            android:enabled="false"/>
+
+        <LinearLayout
+            android:id="@+id/Linearlayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/txtStatus"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btBack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Back" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

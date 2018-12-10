@@ -1,6 +1,8 @@
 package com.serly.uas_mobile;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -8,6 +10,9 @@ import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.provider.Settings;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +23,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.MultiplePermissionsReport;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.DexterError;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.PermissionRequestErrorListener;
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import com.serly.uas_mobile.Model.GetBarang;
 import com.serly.uas_mobile.Rest.ApiClient;
 import com.serly.uas_mobile.Rest.ApiInterfaceBarang;
@@ -28,6 +41,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Calendar;
+import java.util.List;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -63,11 +77,9 @@ public class LayarInsertBarang extends AppCompatActivity {
         imgFoto =(ImageView) findViewById(R.id.imgFoto);
         tvMessage = (TextView) findViewById(R.id.tvMessage2);
 
-        btFoto= (Button) findViewById(R.id.btFoto);
         btCamera= (Button) findViewById(R.id.btCamera);
         btInsert= (Button) findViewById(R.id.btInsert2);
         btBack = (Button) findViewById(R.id.btBack);
-
 
         final ApiInterfaceBarang mApiInterfaceBarang = ApiClient.getClient().create(ApiInterfaceBarang.class);
 
@@ -107,7 +119,7 @@ public class LayarInsertBarang extends AppCompatActivity {
 
                 RequestBody reqAction = MultipartBody.create(MediaType.parse("multipart/form-data"),"insert");
 
-                Call<GetBarang> callInsert = mApiInterfaceBarang.putBarang(body,reqIdBarang,
+                Call<GetBarang> callInsert = mApiInterfaceBarang.postBarang(body,reqIdBarang,
                         reqNamaBarang,reqWarnabarang,reqKategoriBarang,reqBeratBarang,
                         reqDeskripsi,reqHarga,reqStok,reqAction);
 
@@ -139,7 +151,7 @@ public class LayarInsertBarang extends AppCompatActivity {
                     startActivity(mIntent);
                 }
             });
-            btFoto.setOnClickListener(new View.OnClickListener() {
+            btCamera.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     final Intent galleryIntent = new Intent();
@@ -160,7 +172,7 @@ public class LayarInsertBarang extends AppCompatActivity {
                                 Toast.LENGTH_LONG).show();
                         finish();
                     } else {
-                        captureImage();
+                        mintaPermissions();
                     }
                 }
             });
@@ -177,90 +189,191 @@ public class LayarInsertBarang extends AppCompatActivity {
             }
         }
 
-        private void captureImage() {
-            Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+    private void mintaPermissions() {
+        Dexter.withActivity(this)
+                .withPermissions(
+                        Manifest.permission.READ_EXTERNAL_STORAGE,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        Manifest.permission.CAMERA)
+                .withListener(new MultiplePermissionsListener() {
+                    @Override
+                    public void onPermissionsChecked(MultiplePermissionsReport report) {
+                        // Cek apakah semua permission yang diperlukan sudah diijinkan
+                        if (report.areAllPermissionsGranted()) {
+                            Toast.makeText(getApplicationContext(),
+                                    "Semua permissions diijinkan!", Toast.LENGTH_SHORT).show();
+                            tampilkanFotoDialog();
+                        }
 
-                // requestCode 100 untuk membedakan
-                startActivityForResult(takePictureIntent, 100);
-            }
-        }
-
-        public String simpanImage(Bitmap myBitmap) {
-            ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-
-            // Kualitas gambar yang disimpan
-            myBitmap.compress(Bitmap.CompressFormat.JPEG, 90, bytes);
-
-            // Buat object direktori file
-            File lokasiImage = new File(
-                    Environment.getExternalStorageDirectory() + "/JualBeli");
-
-            // Buat direktori untuk penyimpanan
-            if (!lokasiImage.exists()) {
-                lokasiImage.mkdirs();
-            }
-
-            try {
-                // Untuk penamaan file
-                File f = new File(lokasiImage, Calendar.getInstance()
-                        .getTimeInMillis() + ".jpg");
-                f.createNewFile();
-
-                // Operasi file
-                FileOutputStream fo = new FileOutputStream(f);
-                fo.write(bytes.toByteArray());
-                MediaScannerConnection.scanFile(this,
-                        new String[]{f.getPath()},
-                        new String[]{"image/jpeg"}, null);
-                fo.close();
-
-                Log.d("Foto", "File tersimpan di --->" + f.getAbsolutePath());
-
-                // Return file
-                return f.getAbsolutePath();
-
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            }
-            return "";
-        }
-
-        @Override
-        protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-            super.onActivityResult(requestCode, resultCode, data);
-            if (resultCode == RESULT_OK && requestCode ==10){
-                if (data==null){
-                    Toast.makeText(mContext, "Foto gagal di-load", Toast.LENGTH_LONG).show();
-                    return;
-                } else {
-                    Uri contentURI = data.getData();
-                    try {
-                        Bitmap bitmap = MediaStore.Images.
-                                Media.getBitmap(this.getContentResolver(), contentURI);
-                        imagePath = simpanImage(bitmap);
-                        Toast.makeText(mContext, "Foto berhasil di-load!",
-                                Toast.LENGTH_SHORT).show();
-
-                        imgFoto.setImageBitmap(bitmap);
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                        Toast.makeText(mContext, "Foto gagal di-load!", Toast.LENGTH_SHORT).show();
+                        // Cek apakah ada permission yang tidak diijinkan
+                        if (report.isAnyPermissionPermanentlyDenied()) {
+                            // Info user untuk mengubah setting permission
+                            tampilkanSettingsDialog();
+                        }
                     }
 
+                    @Override
+                    public void onPermissionRationaleShouldBeShown(
+                            List<PermissionRequest> permissions,
+                            PermissionToken token) {
+                        token.continuePermissionRequest();
+                    }
+                }).
+                withErrorListener(new PermissionRequestErrorListener() {
+                    @Override
+                    public void onError(DexterError error) {
+                        Toast.makeText(getApplicationContext(),
+                                "Error occurred! ", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .onSameThread()
+                .check();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // Jika tidak ada image yang dipilih maka return
+        if (resultCode == RESULT_CANCELED) {
+            return;
+        }
+
+        // Jika request berasal dari Gallery
+        if (requestCode == 13) {
+            if (data != null) {
+                Uri contentURI = data.getData();
+                try {
+                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), contentURI);
+                    imagePath = simpanImage(bitmap);
+                    Toast.makeText(mContext, "Foto berhasil di-load!", Toast.LENGTH_SHORT).show();
+
+                    Glide.with(mContext).load(new File(imagePath)).into(imgFoto);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    Toast.makeText(mContext, "Foto gagal di-load!", Toast.LENGTH_SHORT).show();
                 }
-
-
-            } else if (resultCode == RESULT_OK && requestCode == 100) {
-
-                Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
-                imgFoto.setImageBitmap(thumbnail);
-
-                imagePath = simpanImage(thumbnail);
-                Toast.makeText(mContext, "Foto berhasil di-load dari Camera!",
-                        Toast.LENGTH_SHORT).show();
             }
+
+            // Jika request dari Camera
+        } else if (requestCode == 16) {
+            Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
+            imagePath = simpanImage(thumbnail);
+            Toast.makeText(mContext, "Foto berhasil di-load dari Camera!", Toast.LENGTH_SHORT)
+                    .show();
+
+            Glide.with(mContext).load(new File(imagePath)).into(imgFoto);
         }
     }
 
+    private void tampilkanFotoDialog(){
+        AlertDialog.Builder fotoDialog = new AlertDialog.Builder(this);
+        fotoDialog.setTitle("Select Action");
+
+        // Isi opsi dialog
+        String[] fotoDialogItems = {
+                "Pilih foto dari gallery",
+                "Ambil dari kamera" };
+
+        fotoDialog.setItems(fotoDialogItems,
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int pilihan) {
+                        switch (pilihan) {
+                            case 0:
+                                pilihDariGallery();
+                                break;
+                            case 1:
+                                ambilDariCamera();
+                                break;
+                        }
+                    }
+                });
+        fotoDialog.show();
+    }
+
+    public void pilihDariGallery() {
+        Intent galleryIntent = new Intent(Intent.ACTION_PICK,
+                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+
+        startActivityForResult(galleryIntent, 13);
+    }
+
+    private void ambilDariCamera() {
+        Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+
+        startActivityForResult(cameraIntent, 16);
+    }
+
+    public String simpanImage(Bitmap myBitmap) {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+
+        // Kualitas gambar yang disimpan
+        myBitmap.compress(Bitmap.CompressFormat.JPEG, 90, bytes);
+
+        // Buat object direktori file
+        File lokasiImage = new File(
+                Environment.getExternalStorageDirectory() + "/praktikum");
+
+        // Buat direktori untuk penyimpanan
+        if (!lokasiImage.exists()) {
+            lokasiImage.mkdirs();
+        }
+
+        try {
+            // Untuk penamaan file
+            File f = new File(lokasiImage, Calendar.getInstance()
+                    .getTimeInMillis() + ".jpg");
+            f.createNewFile();
+
+            // Operasi file
+            FileOutputStream fo = new FileOutputStream(f);
+            fo.write(bytes.toByteArray());
+            MediaScannerConnection.scanFile(this,
+                    new String[]{f.getPath()},
+                    new String[]{"image/jpeg"}, null);
+            fo.close();
+
+            Log.d("PRAKTIKUM", "File tersimpan di --->" + f.getAbsolutePath());
+
+            // Return file
+            return f.getAbsolutePath();
+
+        } catch (IOException e1) {
+            Log.d("PRAKTIKUM", "erroraaaaa");
+            e1.printStackTrace();
+        }
+        return "";
+    }
+
+    // Memberi peringatan butuh permission
+    private void tampilkanSettingsDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(LayarInsertBarang.this);
+        builder.setTitle("Butuh Permission");
+        builder.setMessage("Aplikasi ini membutuhkan permission khusus untuk menjalankan aplikasi.");
+        builder.setPositiveButton("BUKA SETTINGS", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+                bukaSettings();
+            }
+        });
+        builder.setNegativeButton("Batal", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.show();
+
+    }
+
+    // Membuka layar Settings Android
+    private void bukaSettings() {
+        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+        Uri uri = Uri.fromParts("package", getPackageName(), null);
+        intent.setData(uri);
+        startActivityForResult(intent, 101);
+    }
+}

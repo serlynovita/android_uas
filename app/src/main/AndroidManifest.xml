@@ -35,7 +35,11 @@
         <activity android:name=".ActivityBarang" />
         <activity android:name=".LayarDetailBarang" />
         <activity android:name=".LayarInsertBarang" />
-        <activity android:name=".LayarEditBarang"></activity>
+        <activity android:name=".LayarEditBarang" />
+        <activity android:name=".LayarDetailTransaksi" />
+        <activity android:name=".LayarEditTransaksi" />
+        <activity android:name=".LayarInsertTransaksi" />
+        <activity android:name=".ActivityTransaksi"></activity>
     </application>
 
 </manifest>

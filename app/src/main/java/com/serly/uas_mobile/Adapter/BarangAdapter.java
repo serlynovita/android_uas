@@ -90,10 +90,10 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.MyViewHold
                                 mIntent0.putExtra("id_barang",mBarangList.get(position).getIdBarang());
                                 mIntent0.putExtra("nama_barang" , mBarangList.get(position).getNamaBarang());
                                 mIntent0.putExtra("warna_barang" , mBarangList.get(position).getWarnaBarang());
-                                mIntent0.putExtra("kategori_barang)",mBarangList.get(position).getKategoriBarang());
+                                mIntent0.putExtra("kategori_barang",mBarangList.get(position).getKategoriBarang());
                                 mIntent0.putExtra("berat_barang" , String.valueOf(mBarangList.get(position).getBeratBarang()));
                                 mIntent0.putExtra("deskripsi" , String.valueOf(mBarangList.get(position).getDeskripsi()));
-                                mIntent0.putExtra("harga)", mBarangList.get(position).getHarga());
+                                mIntent0.putExtra("harga", mBarangList.get(position).getHarga());
                                 mIntent0.putExtra("stok" , String.valueOf(mBarangList.get(position).getStok()));
                                 mIntent0.putExtra("foto" , mBarangList.get(position).getFoto());
                                 view.getContext().startActivity(mIntent0);
@@ -103,10 +103,10 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.MyViewHold
                                 mIntent1.putExtra("id_barang",mBarangList.get(position).getIdBarang());
                                 mIntent1.putExtra("nama_barang" , mBarangList.get(position).getNamaBarang());
                                 mIntent1.putExtra("warna_barang" , mBarangList.get(position).getWarnaBarang());
-                                mIntent1.putExtra("kategori_barang)", mBarangList.get(position).getKategoriBarang());
+                                mIntent1.putExtra("kategori_barang", mBarangList.get(position).getKategoriBarang());
                                 mIntent1.putExtra("berat_barang" , String.valueOf(mBarangList.get(position).getBeratBarang()));
                                 mIntent1.putExtra("deskripsi" , mBarangList.get(position).getDeskripsi());
-                                mIntent1.putExtra("harga)", String.valueOf(mBarangList.get(position).getHarga()));
+                                mIntent1.putExtra("harga", String.valueOf(mBarangList.get(position).getHarga()));
                                 mIntent1.putExtra("stok" , String.valueOf(mBarangList.get(position).getStok()));
                                 mIntent1.putExtra("foto" , mBarangList.get(position).getFoto());
                                 view.getContext().startActivity(mIntent1);

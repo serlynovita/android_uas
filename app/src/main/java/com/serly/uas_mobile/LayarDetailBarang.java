@@ -1,5 +1,6 @@
 package com.serly.uas_mobile;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,11 +10,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.serly.uas_mobile.Rest.ApiClient;
 import com.serly.uas_mobile.Rest.ApiInterfaceBarang;
 
 public class LayarDetailBarang extends AppCompatActivity {
 
+    Context mContext;
     EditText edtIdBarang, edtNamaBarang,edtWarnaBarang, edtkategoriBarang,
             edtBeratBarang, edtDeskripsi, edtHarga, edtStok ;
     ImageView imgFoto;
@@ -26,6 +29,7 @@ public class LayarDetailBarang extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_layar_detail_barang);
 
+        mContext = getApplicationContext();
         edtIdBarang =(EditText) findViewById(R.id.edtIdBarang);
         edtNamaBarang =(EditText) findViewById(R.id.edtNamaBarang);
         edtWarnaBarang =(EditText) findViewById(R.id.edtWarnaBarang);
@@ -50,6 +54,7 @@ public class LayarDetailBarang extends AppCompatActivity {
         edtDeskripsi.setText(mIntent.getStringExtra("deskripsi"));
         edtHarga.setText(mIntent.getStringExtra("harga"));
         edtStok.setText(mIntent.getStringExtra("stok"));
+        Glide.with(mContext).load(ApiClient.BASE_URL+"uploads/"+mIntent.getStringExtra("foto")).into(imgFoto);
 
         mApiInterfaceBarang = ApiClient.getClient().create(ApiInterfaceBarang.class);
 

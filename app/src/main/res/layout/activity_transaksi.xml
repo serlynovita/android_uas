@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_get_transaksi"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityTransaksi"
+    android:background="@drawable/bg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/txtTitleTransaksi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:text="Daftar Transaksi"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="319dp"
+            android:layout_above="@+id/btAddData"
+            android:layout_below="@+id/txtTitleTransaksi"
+            android:layout_marginTop="73dp"></android.support.v7.widget.RecyclerView>
+
+        <Button
+            android:id="@+id/btAddData"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:onClick="buttonInsertTransaksi_onClick"
+            android:text="Tambah Data" />
+
+        <Button
+            android:id="@+id/btRefresh"
+            android:layout_width="110dp"
+            android:layout_height="63dp"
+            android:layout_below="@+id/recyclerView"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/btAddData"
+            android:onClick="buttonRefreshTransaksi_onClick"
+            android:text="Refresh" />
+
+        <Button
+            android:id="@+id/btBack"
+            android:layout_width="110dp"
+            android:layout_height="58dp"
+            android:layout_below="@+id/recyclerView"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/btRefresh"
+            android:onClick="buttonBackTransaksi_onClick"
+            android:text="Back" />
+
+
+        <TextView
+            android:id="@+id/txtInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Activity One"
+            android:textSize="24sp" />
+    </RelativeLayout>
+</RelativeLayout>
